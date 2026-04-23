@@ -46,7 +46,7 @@ jobs:
           uv run detect-secrets-hook --baseline .secrets.baseline \
             $(git ls-files | grep -Ev '^(uv\.lock|coverage\.xml|\.secrets\.baseline)$')
       - name: Audit dependencies for known CVEs
-        run: uv run pip-audit --strict --disable-pip
+        run: uv run pip-audit --strict
 
   test-unit:
     name: Unit tests

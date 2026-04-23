@@ -32,6 +32,11 @@ pytestmark = [pytest.mark.integration, pytest.mark.asyncio]
 _SCENARIOS_DIR = Path(__file__).parents[1] / "fixtures" / "scenarios"
 
 
+def _load_scenario(scenario_path: Path) -> dict[str, Any]:
+    data: dict[str, Any] = yaml.safe_load(scenario_path.read_text())
+    return data
+
+
 def _forwarder(app: Any) -> Any:
     async def _f(request: HttpxRequest) -> HttpxResponse:
         origin = f"{request.url.scheme}://{request.url.host}"
@@ -60,7 +65,7 @@ async def _seed_tenant(engine: AsyncEngine, tenant_id: UUID) -> None:
 
 
 async def _run_scenario(admin_engine: AsyncEngine, scenario_path: Path) -> tuple[int, int]:
-    scenario = yaml.safe_load(scenario_path.read_text())
+    scenario = _load_scenario(scenario_path)
     messages = scenario["messages"]
     convs = {c["id"]: (str(uuid4()), c["target_hash"]) for c in scenario["conversations"]}
     checkpoints = {cp["after_idx"]: cp["min_tier"] for cp in scenario.get("tier_checkpoints", [])}
@@ -136,14 +141,13 @@ async def test_smart_predator_still_escalates_despite_staying_under_obvious_trig
     final_score, final_tier = await _run_scenario(
         admin_engine, _SCENARIOS_DIR / "smart_predator.yaml"
     )
-    scenario = yaml.safe_load((_SCENARIOS_DIR / "smart_predator.yaml").read_text())
+    scenario = _load_scenario(_SCENARIOS_DIR / "smart_predator.yaml")
     assert final_score >= scenario["expected_final_score_min"], (
         f"smart predator final score {final_score} < expected "
         f"{scenario['expected_final_score_min']}"
     )
     assert final_tier >= scenario["expected_final_tier_min"], (
-        f"smart predator final tier {final_tier} < expected "
-        f"{scenario['expected_final_tier_min']}"
+        f"smart predator final tier {final_tier} < expected {scenario['expected_final_tier_min']}"
     )
 
 
@@ -155,7 +159,7 @@ async def test_false_flag_mentor_does_not_escalate_past_monitoring(
     with grooming must NOT push the actor past tier 2 (MONITOR). Prevents
     false-flag / entrapment risk per spec §9."""
     _, final_tier = await _run_scenario(admin_engine, _SCENARIOS_DIR / "false_flag_mentor.yaml")
-    scenario = yaml.safe_load((_SCENARIOS_DIR / "false_flag_mentor.yaml").read_text())
+    scenario = _load_scenario(_SCENARIOS_DIR / "false_flag_mentor.yaml")
     max_tier = scenario["expected_final_tier_max"]
     assert final_tier <= max_tier, (
         f"false-flag mentor escalated to tier {final_tier} (max allowed {max_tier}) — "

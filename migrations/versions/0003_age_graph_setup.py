@@ -79,6 +79,7 @@ def upgrade() -> None:
         "ALTER DEFAULT PRIVILEGES IN SCHEMA sentinel_graph "
         "GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO sentinel_app"
     )
+    op.execute("SET LOCAL search_path = public")
 
 
 def downgrade() -> None:

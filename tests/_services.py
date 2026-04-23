@@ -22,4 +22,5 @@ SERVICES: Final[tuple[tuple[str, str], ...]] = (
     ("services.honeypot.app.main", "sentinel-honeypot"),
     ("services.federation.app.main", "sentinel-federation"),
     ("services.synthetic_data.app.main", "sentinel-synthetic-data"),
+    ("services.dashboard_bff.app.main", "sentinel-dashboard-bff"),
 )
