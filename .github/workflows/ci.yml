@@ -60,7 +60,7 @@ jobs:
       - run: uv python install ${{ env.PYTHON_VERSION }}
       - run: uv sync --frozen --all-groups
       - run: uv run pytest tests/unit
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: coverage-unit
@@ -131,7 +131,7 @@ jobs:
       - name: Apply Alembic migrations
         run: uv run alembic upgrade head
       - run: uv run pytest tests/integration
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: coverage-integration
