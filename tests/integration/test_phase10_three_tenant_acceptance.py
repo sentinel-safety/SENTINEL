@@ -230,9 +230,9 @@ async def test_three_tenant_publish_consume_match_audit(
     raw_actor_x_str = str(actor_x)
     for audit_row in audit_rows:
         details_json = orjson.dumps(audit_row.details)
-        assert (
-            raw_actor_x_str.encode() not in details_json
-        ), f"raw actor_x UUID found in audit details: {audit_row.details}"
+        assert raw_actor_x_str.encode() not in details_json, (
+            f"raw actor_x UUID found in audit details: {audit_row.details}"
+        )
 
     recv_publisher_ids = {r.details.get("publisher_tenant_id") for r in recv_audit if r.details}
     assert str(tenant_a) in recv_publisher_ids

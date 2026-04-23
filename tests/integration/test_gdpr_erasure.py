@@ -129,9 +129,7 @@ async def test_gdpr_erasure_removes_actor_data_and_pseudonymises_audit(
         )
         assert event_row.scalar_one() == 0
         audit_row = await session.execute(
-            text(
-                "SELECT count(*) FROM audit_log_entry " "WHERE tenant_id = :t AND actor_id IS NULL"
-            ),
+            text("SELECT count(*) FROM audit_log_entry WHERE tenant_id = :t AND actor_id IS NULL"),
             {"t": tenant_id},
         )
         assert audit_row.scalar_one() >= 1

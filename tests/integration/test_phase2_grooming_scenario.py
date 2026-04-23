@@ -129,12 +129,12 @@ async def test_grooming_scenario_30_messages_escalates_through_tiers(
                         f"< required={min_tier_value}, score={score}"
                     )
 
-    assert (
-        score >= scenario["expected_final_score_min"]
-    ), f"final score {score} < expected minimum {scenario['expected_final_score_min']}"
-    assert (
-        ResponseTier[body["tier"].upper()].value >= scenario["expected_final_tier_min"]
-    ), f"final tier {body['tier']} below expected minimum {scenario['expected_final_tier_min']}"
+    assert score >= scenario["expected_final_score_min"], (
+        f"final score {score} < expected minimum {scenario['expected_final_score_min']}"
+    )
+    assert ResponseTier[body["tier"].upper()].value >= scenario["expected_final_tier_min"], (
+        f"final tier {body['tier']} below expected minimum {scenario['expected_final_tier_min']}"
+    )
 
 
 async def test_grooming_scenario_watch_tier_reached_by_first_secrecy_signal(
@@ -228,6 +228,6 @@ async def test_grooming_scenario_gift_offering_vbucks_flagged(
     assert resp.status_code == 200
     body = resp.json()
     gift_signals = [s for s in body["signals"] if s["kind"] == "gift_offering"]
-    assert (
-        len(gift_signals) >= 1
-    ), "v-bucks gift offering must be flagged by rule; LLM second pass may refine confidence"
+    assert len(gift_signals) >= 1, (
+        "v-bucks gift offering must be flagged by rule; LLM second pass may refine confidence"
+    )

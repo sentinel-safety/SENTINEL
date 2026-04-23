@@ -46,9 +46,9 @@ def test_pt_timing_oracle_api_key_uses_constant_time_compare() -> None:
         "resolve_api_key must use hmac.compare_digest for hash comparison, "
         "otherwise byte-by-byte timing oracles become exploitable"
     )
-    assert (
-        " == expected_hash" not in source
-    ), "naive == comparison of hash values forbidden in auth path"
+    assert " == expected_hash" not in source, (
+        "naive == comparison of hash values forbidden in auth path"
+    )
 
 
 async def _seed_tenant_and_key(admin_engine: AsyncEngine) -> tuple[uuid.UUID, str]:

@@ -154,9 +154,9 @@ async def test_augmented_detector_not_worse_and_catches_new(tmp_path: object) ->
     )
     augmented_f1 = augmented_metrics.f1
 
-    assert (
-        augmented_f1 >= baseline_f1 - 0.01
-    ), f"augmented F1 {augmented_f1:.4f} dropped below baseline {baseline_f1:.4f} - 1%"
+    assert augmented_f1 >= baseline_f1 - 0.01, (
+        f"augmented F1 {augmented_f1:.4f} dropped below baseline {baseline_f1:.4f} - 1%"
+    )
 
     novel_adapter = MockRealDatasetAdapter(
         tuple(c for c in real_convs if _NOVEL_PHRASE in " ".join(str(t) for t in c.turns))

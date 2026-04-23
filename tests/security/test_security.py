@@ -287,9 +287,9 @@ def test_pt11_honeypot_invocation_bypass_lint_passes() -> None:
                 continue
             if pattern.search(py.read_text(encoding="utf-8")):
                 offenders.append(py)
-    assert (
-        offenders == []
-    ), f"direct imports of shared.honeypot.prompt/evidence outside entrypoint: {offenders}"
+    assert offenders == [], (
+        f"direct imports of shared.honeypot.prompt/evidence outside entrypoint: {offenders}"
+    )
 
 
 async def test_pt12_federation_signature_forgery_rejected() -> None:
@@ -303,9 +303,9 @@ async def test_pt12_federation_signature_forgery_rejected() -> None:
     real_secret = sha256(b"real-secret").digest()
     wrong_secret = sha256(b"wrong-secret").digest()
     commit = sign_signal(secret=real_secret, signal=signal)
-    assert not verify_signal(
-        secret=wrong_secret, signal=signal, commit=commit
-    ), "signature forged with wrong HMAC key must be rejected"
-    assert verify_signal(
-        secret=real_secret, signal=signal, commit=commit
-    ), "valid signature must pass"
+    assert not verify_signal(secret=wrong_secret, signal=signal, commit=commit), (
+        "signature forged with wrong HMAC key must be rejected"
+    )
+    assert verify_signal(secret=real_secret, signal=signal, commit=commit), (
+        "valid signature must pass"
+    )

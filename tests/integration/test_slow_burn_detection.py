@@ -121,9 +121,9 @@ async def test_slow_burn_scenario_reaches_critical_with_mandatory_report(
 
     assert len(profiles) == 1, "exactly one actor profile expected"
     profile = profiles[0]
-    assert (
-        profile.tier == ResponseTier.CRITICAL
-    ), f"actor must reach CRITICAL (tier 5), got tier {profile.tier}"
+    assert profile.tier == ResponseTier.CRITICAL, (
+        f"actor must reach CRITICAL (tier 5), got tier {profile.tier}"
+    )
 
     mandatory_report_pkg = evaluate_mandatory_report(
         tenant_id=pilot_tid,
@@ -135,9 +135,9 @@ async def test_slow_burn_scenario_reaches_critical_with_mandatory_report(
             ScoreSignal(kind=SignalKind.PHOTO_REQUEST, confidence=0.90),
         ),
     )
-    assert (
-        mandatory_report_pkg is not None
-    ), "mandatory_report package must be evaluable for CRITICAL actor with triggering signals"
+    assert mandatory_report_pkg is not None, (
+        "mandatory_report package must be evaluable for CRITICAL actor with triggering signals"
+    )
     assert mandatory_report_pkg.report_template == "NCMEC_CYBERTIPLINE"
 
     async with tenant_session(pilot_tid) as session:
@@ -153,6 +153,6 @@ async def test_slow_burn_scenario_reaches_critical_with_mandatory_report(
 
     assert len(tier_change_events) >= 1, "at least one tier.changed audit event must be recorded"
     final_tiers = [e.details.get("new_tier") for e in tier_change_events]
-    assert (
-        ResponseTier.CRITICAL in final_tiers
-    ), f"tier.changed events must include CRITICAL escalation, got: {final_tiers}"
+    assert ResponseTier.CRITICAL in final_tiers, (
+        f"tier.changed events must include CRITICAL escalation, got: {final_tiers}"
+    )

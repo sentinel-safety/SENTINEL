@@ -83,9 +83,9 @@ async def test_chaos_redis_unreachable_does_not_crash_federation_dispatch(
         if pending:
             await asyncio.gather(*pending, return_exceptions=True)
 
-    assert any(
-        "federation dispatch failed" in record.message for record in caplog.records
-    ), "Redis failure must be logged via warning, not raised"
+    assert any("federation dispatch failed" in record.message for record in caplog.records), (
+        "Redis failure must be logged via warning, not raised"
+    )
 
 
 async def test_chaos_postgres_unreachable_returns_clean_500_not_traceback(
@@ -119,7 +119,7 @@ async def test_chaos_postgres_unreachable_returns_clean_500_not_traceback(
                 headers=auth_headers(token),
             )
     assert resp.status_code >= 500, "DB outage should surface as a 5xx, not 200"
-    assert (
-        "OperationalError" not in resp.text
-    ), "internal exception class must not leak in response body"
+    assert "OperationalError" not in resp.text, (
+        "internal exception class must not leak in response body"
+    )
     assert "SELECT 1" not in resp.text, "raw SQL must not leak in response body"

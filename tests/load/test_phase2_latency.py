@@ -111,6 +111,6 @@ async def test_phase2_p99_latency_stays_under_budget(
 
     durations_ms.sort()
     p99 = durations_ms[int(len(durations_ms) * 0.99) - 1]
-    assert (
-        p99 < _TARGET_P99_MS
-    ), f"p99={p99:.2f}ms exceeds budget of {_TARGET_P99_MS}ms (samples={len(durations_ms)})"
+    assert p99 < _TARGET_P99_MS, (
+        f"p99={p99:.2f}ms exceeds budget of {_TARGET_P99_MS}ms (samples={len(durations_ms)})"
+    )
