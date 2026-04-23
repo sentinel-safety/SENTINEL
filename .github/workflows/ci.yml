@@ -19,7 +19,7 @@ jobs:
     name: Lint + type-check
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v4
         with:
           version: ${{ env.UV_VERSION }}
@@ -34,7 +34,7 @@ jobs:
     name: Security audits
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v4
         with:
           version: ${{ env.UV_VERSION }}
@@ -52,7 +52,7 @@ jobs:
     name: Unit tests
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v4
         with:
           version: ${{ env.UV_VERSION }}
@@ -70,7 +70,7 @@ jobs:
     name: Smoke tests
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v4
         with:
           version: ${{ env.UV_VERSION }}
@@ -117,7 +117,7 @@ jobs:
       SENTINEL_QDRANT_URL: http://127.0.0.1:6333
       PGPASSWORD: sentinel_dev
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v4
         with:
           version: ${{ env.UV_VERSION }}
