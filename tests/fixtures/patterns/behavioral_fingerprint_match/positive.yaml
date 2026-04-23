@@ -1,0 +1,6 @@
+cases:
+  - id: near_duplicate_flagged_neighbor
+    messages: ["hey friend"]
+    minor_recipient: true
+    expect_match: true
+    recent_distinct_minor_target_count: 0

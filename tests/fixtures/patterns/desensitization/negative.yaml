@@ -1,0 +1,18 @@
+cases:
+  - id: normal_chat
+    messages:
+      - "What subjects do you enjoy at school?"
+    minor_recipient: true
+    expect_match: false
+
+  - id: adult_recipient
+    messages:
+      - "Have you seen the new adult comedy on Netflix? It's pretty raunchy."
+    minor_recipient: false
+    expect_match: false
+
+  - id: health_education
+    messages:
+      - "It is normal to have questions about puberty. Your school nurse can help."
+    minor_recipient: true
+    expect_match: false

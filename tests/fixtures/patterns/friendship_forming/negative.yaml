@@ -1,0 +1,18 @@
+cases:
+  - id: normal_greeting
+    messages:
+      - "Hey, how was your day at school?"
+    minor_recipient: true
+    expect_match: false
+
+  - id: adult_recipient
+    messages:
+      - "I feel like I've known you forever, we have such a connection"
+    minor_recipient: false
+    expect_match: false
+
+  - id: benign_compliment
+    messages:
+      - "Good job on the project, you worked really hard"
+    minor_recipient: true
+    expect_match: false

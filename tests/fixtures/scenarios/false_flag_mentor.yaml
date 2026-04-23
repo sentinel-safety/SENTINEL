@@ -1,0 +1,25 @@
+expected_final_tier_max: 2
+description: >
+  "False flag" — a benign homework/chess tutor whose job involves professional
+  contact with minors. Uses vocabulary that might superficially resemble
+  grooming (asking about the child, arranging times to meet online, saying
+  "keep working hard for me") but the context is unambiguously educational
+  and public. Must NOT escalate to tier 4 or 5; ideally stays at tier 0-1.
+conversations:
+  - {id: 1,  target_hash: "1111111111111111111111111111111111111111111111111111111111111111"}
+  - {id: 2,  target_hash: "2222222222222222222222222222222222222222222222222222222222222222"}
+  - {id: 3,  target_hash: "3333333333333333333333333333333333333333333333333333333333333333"}
+  - {id: 4,  target_hash: "4444444444444444444444444444444444444444444444444444444444444444"}
+messages:
+  - {idx: 1,  conversation_idx: 1, day_offset: 0,  hour: 16, text: "welcome to chess club, please ask your parent to join the first session"}
+  - {idx: 2,  conversation_idx: 1, day_offset: 0,  hour: 16, text: "homework this week is page 22 exercises 1 through 4"}
+  - {idx: 3,  conversation_idx: 2, day_offset: 1,  hour: 16, text: "great effort on the opening, your mum can see the replay in the parent portal"}
+  - {idx: 4,  conversation_idx: 1, day_offset: 2,  hour: 16, text: "remember the lesson plan is posted publicly on the school board"}
+  - {idx: 5,  conversation_idx: 3, day_offset: 3,  hour: 16, text: "please copy your parent on any non-session messages from me"}
+  - {idx: 6,  conversation_idx: 2, day_offset: 4,  hour: 16, text: "next session is at the scheduled time in the shared calendar"}
+  - {idx: 7,  conversation_idx: 4, day_offset: 5,  hour: 16, text: "welcome, your guardian signed the consent form yesterday, thanks"}
+  - {idx: 8,  conversation_idx: 1, day_offset: 6,  hour: 16, text: "the tournament is open to parents and guardians as spectators"}
+  - {idx: 9,  conversation_idx: 3, day_offset: 7,  hour: 16, text: "good analysis, keep working hard for your rating"}
+  - {idx: 10, conversation_idx: 4, day_offset: 8,  hour: 16, text: "all communication happens in this supervised channel only"}
+  - {idx: 11, conversation_idx: 2, day_offset: 9,  hour: 16, text: "your parent asked me to remind you about the practice plan"}
+  - {idx: 12, conversation_idx: 1, day_offset: 10, hour: 16, text: "homework feedback is in the shared doc your parent can see"}

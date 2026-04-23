@@ -1,0 +1,18 @@
+cases:
+  - id: normal_chat
+    messages:
+      - "How are you doing today? Anything fun planned for the weekend?"
+    minor_recipient: true
+    expect_match: false
+
+  - id: adult_recipient
+    messages:
+      - "You're so attractive, I think about you all the time"
+    minor_recipient: false
+    expect_match: false
+
+  - id: benign_photo_request
+    messages:
+      - "Can you send a photo of the project you made for school? I'd love to see it"
+    minor_recipient: true
+    expect_match: false

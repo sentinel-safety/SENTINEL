@@ -1,0 +1,20 @@
+cases:
+  - id: emoji_obfuscated
+    messages:
+      - "r ur 👨‍👩‍👧 home rn or r u alone 👀"
+    minor_recipient: true
+    expect_match: true
+
+  - id: split_question
+    messages:
+      - "does ur mum"
+      - "check ur phone"
+      - "or does she trust u"
+    minor_recipient: true
+    expect_match: true
+
+  - id: indirect_probe
+    messages:
+      - "so like... do u get much privacy at home? like can u talk freely?"
+    minor_recipient: true
+    expect_match: true

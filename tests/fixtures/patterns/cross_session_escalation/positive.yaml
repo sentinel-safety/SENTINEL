@@ -1,0 +1,11 @@
+cases:
+  - id: three_conversations_two_minors
+    distinct_conversations: 3
+    distinct_minor_targets: 2
+    minor_recipient: true
+    expect_match: true
+  - id: many_conversations_many_minors
+    distinct_conversations: 10
+    distinct_minor_targets: 5
+    minor_recipient: true
+    expect_match: true

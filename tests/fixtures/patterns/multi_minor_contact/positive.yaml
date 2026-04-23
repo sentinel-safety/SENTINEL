@@ -1,0 +1,11 @@
+cases:
+  - id: three_minors_in_window
+    messages: ["hi"]
+    minor_recipient: true
+    expect_match: true
+    recent_distinct_minor_target_count: 0
+  - id: five_minors_in_window
+    messages: ["hello"]
+    minor_recipient: true
+    expect_match: true
+    recent_distinct_minor_target_count: 0

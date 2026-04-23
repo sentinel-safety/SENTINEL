@@ -1,0 +1,17 @@
+cases:
+  - id: what_school
+    messages: ["what school do you go to"]
+    minor_recipient: true
+    expect_match: true
+  - id: home_alone
+    messages: ["are you home alone right now?"]
+    minor_recipient: true
+    expect_match: true
+  - id: your_address
+    messages: ["what's your address so i can send something"]
+    minor_recipient: true
+    expect_match: true
+  - id: whos_home
+    messages: ["who is home with you"]
+    minor_recipient: true
+    expect_match: true

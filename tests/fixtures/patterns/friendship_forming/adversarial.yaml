@@ -1,0 +1,20 @@
+cases:
+  - id: emoji_spread
+    messages:
+      - "u r so 💯 mature 4 ur age... no1 gets u like i do 🥺"
+    minor_recipient: true
+    expect_match: true
+
+  - id: language_switch_spanish
+    messages:
+      - "eres tan especial para mí, nadie te entiende como yo"
+    minor_recipient: true
+    expect_match: true
+
+  - id: split_across_messages
+    messages:
+      - "i feel like"
+      - "we have such a"
+      - "special connection tbh"
+    minor_recipient: true
+    expect_match: true

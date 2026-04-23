@@ -1,0 +1,5 @@
+cases:
+  - id: indirect
+    messages: ["i'll get you something nice"]
+    minor_recipient: true
+    expect_match: false

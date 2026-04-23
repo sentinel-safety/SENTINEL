@@ -1,0 +1,18 @@
+cases:
+  - id: parents_home
+    messages:
+      - "Are your parents home right now? Or are you alone?"
+    minor_recipient: true
+    expect_match: true
+
+  - id: device_monitoring
+    messages:
+      - "Does your mum check your phone? Like, does she go through your messages?"
+    minor_recipient: true
+    expect_match: true
+
+  - id: alone_time
+    messages:
+      - "What time do your parents usually go to bed? Do you get time by yourself at night?"
+    minor_recipient: true
+    expect_match: true

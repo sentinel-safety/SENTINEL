@@ -1,0 +1,18 @@
+cases:
+  - id: explicit_proposition
+    messages:
+      - "I think about you in a sexual way, you're so attractive for your age"
+    minor_recipient: true
+    expect_match: true
+
+  - id: photo_request
+    messages:
+      - "Can you send me a pic of yourself? Just for me, I want to see you"
+    minor_recipient: true
+    expect_match: true
+
+  - id: sexual_role_play
+    messages:
+      - "Let's play a game where you pretend to be my girlfriend and I'll tell you what I want to do"
+    minor_recipient: true
+    expect_match: true

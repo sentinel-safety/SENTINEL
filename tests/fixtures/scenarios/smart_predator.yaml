@@ -1,0 +1,56 @@
+expected_final_score_min: 40
+expected_final_tier_min: 2
+description: >
+  "Smart predator" who reads the SENTINEL spec and tries to stay just under
+  the obvious triggers — no off-platform moves, no secrecy asks, no gifts.
+  Still establishes an age-inappropriate contact pattern across many minors,
+  asks for personal info incrementally, probes parental supervision.
+  The system must still escalate via cross-conversation and slow-burn
+  signals even though any single message is benign.
+tier_checkpoints:
+  - after_idx: 15
+    min_tier: 1
+  - after_idx: 25
+    min_tier: 2
+conversations:
+  - {id: 1,  target_hash: "1111111111111111111111111111111111111111111111111111111111111111"}
+  - {id: 2,  target_hash: "2222222222222222222222222222222222222222222222222222222222222222"}
+  - {id: 3,  target_hash: "3333333333333333333333333333333333333333333333333333333333333333"}
+  - {id: 4,  target_hash: "4444444444444444444444444444444444444444444444444444444444444444"}
+  - {id: 5,  target_hash: "5555555555555555555555555555555555555555555555555555555555555555"}
+  - {id: 6,  target_hash: "6666666666666666666666666666666666666666666666666666666666666666"}
+  - {id: 7,  target_hash: "7777777777777777777777777777777777777777777777777777777777777777"}
+  - {id: 8,  target_hash: "8888888888888888888888888888888888888888888888888888888888888888"}
+  - {id: 9,  target_hash: "9999999999999999999999999999999999999999999999999999999999999999"}
+  - {id: 10, target_hash: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}
+  - {id: 11, target_hash: "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"}
+  - {id: 12, target_hash: "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"}
+  - {id: 13, target_hash: "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"}
+  - {id: 14, target_hash: "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"}
+  - {id: 15, target_hash: "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"}
+messages:
+  - {idx: 1,  conversation_idx: 1,  day_offset: 0,  hour: 16, text: "nice play today, good game"}
+  - {idx: 2,  conversation_idx: 2,  day_offset: 1,  hour: 15, text: "you around to play later"}
+  - {idx: 3,  conversation_idx: 3,  day_offset: 2,  hour: 17, text: "what server do you usually play on"}
+  - {idx: 4,  conversation_idx: 4,  day_offset: 3,  hour: 14, text: "cool name, where did you come up with it"}
+  - {idx: 5,  conversation_idx: 5,  day_offset: 4,  hour: 16, text: "thanks for carrying that round"}
+  - {idx: 6,  conversation_idx: 1,  day_offset: 5,  hour: 15, text: "glad you're on, want to queue together"}
+  - {idx: 7,  conversation_idx: 6,  day_offset: 6,  hour: 14, text: "you play a lot for someone your age"}
+  - {idx: 8,  conversation_idx: 7,  day_offset: 7,  hour: 17, text: "mind if i ask what grade you're in"}
+  - {idx: 9,  conversation_idx: 2,  day_offset: 8,  hour: 16, text: "do your parents play too or just you"}
+  - {idx: 10, conversation_idx: 8,  day_offset: 9,  hour: 15, text: "good to see you online again"}
+  - {idx: 11, conversation_idx: 9,  day_offset: 10, hour: 14, text: "where are you from, rough area is fine"}
+  - {idx: 12, conversation_idx: 3,  day_offset: 11, hour: 16, text: "you seem more mature than most players here"}
+  - {idx: 13, conversation_idx: 10, day_offset: 12, hour: 15, text: "how late are you usually allowed to play"}
+  - {idx: 14, conversation_idx: 11, day_offset: 13, hour: 17, text: "do you have an adult who checks on you online"}
+  - {idx: 15, conversation_idx: 4,  day_offset: 14, hour: 14, text: "you're fun to chat with, really"}
+  - {idx: 16, conversation_idx: 12, day_offset: 15, hour: 16, text: "what's your school schedule like this term"}
+  - {idx: 17, conversation_idx: 5,  day_offset: 16, hour: 15, text: "you seem way smarter than other kids"}
+  - {idx: 18, conversation_idx: 13, day_offset: 17, hour: 14, text: "do your parents know we talk"}
+  - {idx: 19, conversation_idx: 6,  day_offset: 18, hour: 17, text: "your profile pic is nice, how recent is it"}
+  - {idx: 20, conversation_idx: 14, day_offset: 19, hour: 16, text: "you'd probably enjoy some other games i play"}
+  - {idx: 21, conversation_idx: 7,  day_offset: 20, hour: 15, text: "you're really one of the more mature people i've met"}
+  - {idx: 22, conversation_idx: 15, day_offset: 21, hour: 14, text: "how close are your parents right now, just curious"}
+  - {idx: 23, conversation_idx: 8,  day_offset: 22, hour: 17, text: "what time do you get home from school usually"}
+  - {idx: 24, conversation_idx: 9,  day_offset: 23, hour: 16, text: "i like how we just talk like normal people"}
+  - {idx: 25, conversation_idx: 10, day_offset: 24, hour: 15, text: "rough neighborhood you're in, or quiet one"}

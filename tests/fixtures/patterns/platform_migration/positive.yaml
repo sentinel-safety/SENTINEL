@@ -1,0 +1,17 @@
+cases:
+  - id: move_to_telegram
+    messages: ["hey let's move to telegram it's faster"]
+    minor_recipient: true
+    expect_match: true
+  - id: dm_signal
+    messages: ["dm me on signal, this chat is laggy"]
+    minor_recipient: true
+    expect_match: true
+  - id: add_whatsapp
+    messages: ["add me on whatsapp real quick"]
+    minor_recipient: true
+    expect_match: true
+  - id: continue_snap
+    messages: ["we can continue on snapchat"]
+    minor_recipient: true
+    expect_match: true

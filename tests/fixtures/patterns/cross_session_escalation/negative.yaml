@@ -1,0 +1,16 @@
+cases:
+  - id: below_conversation_threshold
+    distinct_conversations: 2
+    distinct_minor_targets: 2
+    minor_recipient: true
+    expect_match: false
+  - id: below_target_threshold
+    distinct_conversations: 4
+    distinct_minor_targets: 1
+    minor_recipient: true
+    expect_match: false
+  - id: recipient_not_minor
+    distinct_conversations: 5
+    distinct_minor_targets: 3
+    minor_recipient: false
+    expect_match: false

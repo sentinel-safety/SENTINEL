@@ -1,0 +1,11 @@
+cases:
+  - id: no_memory
+    distinct_conversations: 0
+    distinct_minor_targets: 0
+    minor_recipient: true
+    expect_match: false
+  - id: boundary_two_targets_two_conversations
+    distinct_conversations: 2
+    distinct_minor_targets: 2
+    minor_recipient: true
+    expect_match: false

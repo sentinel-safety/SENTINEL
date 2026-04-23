@@ -1,0 +1,6 @@
+cases:
+  - id: single_flagged_neighbor
+    messages: ["hi"]
+    minor_recipient: true
+    expect_match: false
+    recent_distinct_minor_target_count: 0

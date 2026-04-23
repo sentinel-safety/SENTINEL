@@ -1,0 +1,40 @@
+messages:
+  - {idx: 0, text: "hey, saw you on the leaderboard! great game", triggers: []}
+  - {idx: 1, text: "you play so well, you must be super smart", triggers: []}
+  - {idx: 2, text: "how long have you been playing this game?", triggers: []}
+  - {idx: 3, text: "i love chatting with you, you get me", triggers: []}
+  - {idx: 4, text: "you are honestly way cooler than other kids", triggers: []}
+  - {idx: 5, text: "don't tell your parents about me, they wouldn't understand", triggers: [secrecy_request]}
+  - {idx: 6, text: "keep this between us, ok?", triggers: [secrecy_request]}
+  - {idx: 7, text: "i just feel like nobody gets me like you do", triggers: []}
+  - {idx: 8, text: "how old are you really? you seem so mature", triggers: []}
+  - {idx: 9, text: "let's move to discord so we can talk more privately", triggers: [platform_migration]}
+  - {idx: 10, text: "is your mom usually home when you are online?", triggers: []}
+  - {idx: 11, text: "are your parents strict about screen time?", triggers: []}
+  - {idx: 12, text: "it's just easier to talk when no one is watching", triggers: []}
+  - {idx: 13, text: "where do you live? i might know people near you", triggers: [personal_info_probe]}
+  - {idx: 14, text: "you are so much more mature than your friends", triggers: []}
+  - {idx: 15, text: "i miss talking to you when you're away", triggers: []}
+  - {idx: 16, text: "our little secret, you know i care about you", triggers: [secrecy_request]}
+  - {idx: 17, text: "i'll send you robux if you keep chatting with me", triggers: [gift_offering]}
+  - {idx: 18, text: "have you ever seen content like this before?", triggers: []}
+  - {idx: 19, text: "i have some grown-up things i want to share", triggers: []}
+  - {idx: 20, text: "don't mention this to anyone at school either", triggers: [secrecy_request]}
+  - {idx: 21, text: "just between you and me, some adults talk this way", triggers: [secrecy_request]}
+  - {idx: 22, text: "what's your phone number so i can text you directly", triggers: [personal_info_probe]}
+  - {idx: 23, text: "can you add me on snap? dm me on snapchat", triggers: [platform_migration]}
+  - {idx: 24, text: "let's continue on signal where it's more private", triggers: [platform_migration]}
+  - {idx: 25, text: "i think you are ready for something special", triggers: []}
+  - {idx: 26, text: "send me a gift card and i'll show you something cool", triggers: [gift_offering]}
+  - {idx: 27, text: "can you send me a picture of you?", triggers: []}
+  - {idx: 28, text: "don't say anything, it stays between us forever", triggers: [secrecy_request]}
+  - {idx: 29, text: "what's your address, i want to send you something", triggers: [personal_info_probe]}
+
+tier_checkpoints:
+  - {after_idx: 6, min_tier: 1}
+  - {after_idx: 9, min_tier: 2}
+  - {after_idx: 16, min_tier: 3}
+  - {after_idx: 29, min_tier: 4}
+
+expected_final_score_min: 60
+expected_final_tier_min: 3

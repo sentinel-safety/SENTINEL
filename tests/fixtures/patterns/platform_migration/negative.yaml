@@ -1,0 +1,5 @@
+cases:
+  - id: mention_telegram
+    messages: ["my dad uses telegram for work"]
+    minor_recipient: true
+    expect_match: false

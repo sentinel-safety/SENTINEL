@@ -1,0 +1,9 @@
+cases:
+  - id: spaced
+    messages: ["let's m o v e to telegram"]
+    minor_recipient: true
+    expect_match: false
+  - id: typo_form
+    messages: ["dm me on signalapp"]
+    minor_recipient: true
+    expect_match: false

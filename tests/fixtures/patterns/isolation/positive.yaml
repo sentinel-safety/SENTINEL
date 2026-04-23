@@ -1,0 +1,18 @@
+cases:
+  - id: keep_secret
+    messages:
+      - "Let's keep what we talk about between us, your parents wouldn't understand"
+    minor_recipient: true
+    expect_match: true
+
+  - id: dont_tell
+    messages:
+      - "Please don't tell anyone about our conversations. This is just for us."
+    minor_recipient: true
+    expect_match: true
+
+  - id: secrecy_guilt
+    messages:
+      - "If you really trusted me you wouldn't tell your mum. That would ruin everything."
+    minor_recipient: true
+    expect_match: true

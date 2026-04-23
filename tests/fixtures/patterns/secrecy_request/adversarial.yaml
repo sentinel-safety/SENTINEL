@@ -1,0 +1,9 @@
+cases:
+  - id: spread_across_messages
+    messages: ["let's keep", "this just between", "you and me ok"]
+    minor_recipient: true
+    expect_match: true
+  - id: leetspeak
+    messages: ["d0n't t3ll y0ur p4rents"]
+    minor_recipient: true
+    expect_match: false

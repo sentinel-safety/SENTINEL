@@ -1,0 +1,20 @@
+cases:
+  - id: coded_language
+    messages:
+      - "wanna play a game? 😏 just between us... something grown up"
+    minor_recipient: true
+    expect_match: true
+
+  - id: emoji_request
+    messages:
+      - "can u send a 📸 just 4 me... nothing weird just for my eyes only"
+    minor_recipient: true
+    expect_match: true
+
+  - id: split_proposition
+    messages:
+      - "i think about u"
+      - "in like a special way"
+      - "ur so attractive tbh"
+    minor_recipient: true
+    expect_match: true

@@ -1,0 +1,48 @@
+{
+  "sha256_conversations": "3eccf50ba7c3de5b3bd5e87e45fec67cbd3298f66888a483d9cb4f33d726a576",
+  "schema_version": 1,
+  "seed": 424242,
+  "axes": {
+    "demographics": [
+      {
+        "age_band": "11-13",
+        "gender": "unspecified",
+        "regional_context": "US"
+      },
+      {
+        "age_band": "14-15",
+        "gender": "unspecified",
+        "regional_context": "US"
+      },
+      {
+        "age_band": "16-17",
+        "gender": "unspecified",
+        "regional_context": "US"
+      }
+    ],
+    "platforms": [
+      "dm",
+      "game_chat",
+      "forum_pm"
+    ],
+    "communication_styles": [
+      "casual_typing"
+    ],
+    "languages": [
+      "en"
+    ]
+  },
+  "stage_mix": {
+    "weights": {
+      "friendship_forming": 1,
+      "risk_assessment": 1,
+      "exclusivity": 1,
+      "isolation": 1,
+      "desensitization": 1,
+      "sexual_escalation": 1
+    }
+  },
+  "conversation_count": 50,
+  "generated_at": "2026-04-22T12:46:45.557122Z",
+  "version": "v1"
+}

@@ -1,0 +1,67 @@
+expected_final_score_min: 60
+expected_final_tier_min: 3
+tier_checkpoints:
+  - after_idx: 20
+    min_tier: 2
+  - after_idx: 25
+    min_tier: 3
+conversations:
+  - id: 1
+    target_hash: "1111111111111111111111111111111111111111111111111111111111111111"
+  - id: 2
+    target_hash: "2222222222222222222222222222222222222222222222222222222222222222"
+  - id: 3
+    target_hash: "3333333333333333333333333333333333333333333333333333333333333333"
+  - id: 4
+    target_hash: "4444444444444444444444444444444444444444444444444444444444444444"
+  - id: 5
+    target_hash: "5555555555555555555555555555555555555555555555555555555555555555"
+  - id: 6
+    target_hash: "6666666666666666666666666666666666666666666666666666666666666666"
+  - id: 7
+    target_hash: "7777777777777777777777777777777777777777777777777777777777777777"
+  - id: 8
+    target_hash: "8888888888888888888888888888888888888888888888888888888888888888"
+  - id: 9
+    target_hash: "9999999999999999999999999999999999999999999999999999999999999999"
+  - id: 10
+    target_hash: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  - id: 11
+    target_hash: "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  - id: 12
+    target_hash: "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+  - id: 13
+    target_hash: "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+  - id: 14
+    target_hash: "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+messages:
+  - {idx: 1, conversation_idx: 1, day_offset: 0, hour: 15, text: "hey, saw you on the leaderboard, cool name"}
+  - {idx: 2, conversation_idx: 2, day_offset: 1, hour: 16, text: "how's school going this week"}
+  - {idx: 3, conversation_idx: 3, day_offset: 2, hour: 14, text: "you play really well for your age"}
+  - {idx: 4, conversation_idx: 1, day_offset: 3, hour: 17, text: "do you usually play at this time"}
+  - {idx: 5, conversation_idx: 4, day_offset: 4, hour: 15, text: "what city are you from, just curious"}
+  - {idx: 6, conversation_idx: 5, day_offset: 5, hour: 16, text: "you seem more mature than other kids"}
+  - {idx: 7, conversation_idx: 2, day_offset: 6, hour: 14, text: "hope school wasn't too hard today"}
+  - {idx: 8, conversation_idx: 6, day_offset: 7, hour: 15, text: "what grade are you in right now"}
+  - {idx: 9, conversation_idx: 3, day_offset: 8, hour: 16, text: "how do your parents feel about you playing"}
+  - {idx: 10, conversation_idx: 7, day_offset: 9, hour: 17, text: "you're fun to chat with"}
+  - {idx: 11, conversation_idx: 4, day_offset: 10, hour: 14, text: "what's your favorite subject"}
+  - {idx: 12, conversation_idx: 8, day_offset: 11, hour: 15, text: "how long have you been gaming"}
+  - {idx: 13, conversation_idx: 5, day_offset: 12, hour: 16, text: "you seem way smarter than kids your age"}
+  - {idx: 14, conversation_idx: 9, day_offset: 13, hour: 14, text: "do you have siblings who also play"}
+  - {idx: 15, conversation_idx: 6, day_offset: 14, hour: 15, text: "did you have a good day today"}
+  - {idx: 16, conversation_idx: 10, day_offset: 15, hour: 16, text: "what time do you usually come online"}
+  - {idx: 17, conversation_idx: 7, day_offset: 15, hour: 17, text: "are your parents usually around"}
+  - {idx: 18, conversation_idx: 11, day_offset: 16, hour: 14, text: "we should keep chatting regularly"}
+  - {idx: 19, conversation_idx: 8, day_offset: 16, hour: 15, text: "you're more fun than other kids"}
+  - {idx: 20, conversation_idx: 12, day_offset: 17, hour: 16, text: "don't tell your parents we chat, they might get mad"}
+  - {idx: 21, conversation_idx: 9, day_offset: 18, hour: 14, text: "where do you live, maybe i know the area"}
+  - {idx: 22, conversation_idx: 13, day_offset: 18, hour: 15, text: "let's move to discord so it's more private"}
+  - {idx: 23, conversation_idx: 10, day_offset: 19, hour: 16, text: "i'll send you robux if you keep chatting with me"}
+  - {idx: 24, conversation_idx: 11, day_offset: 19, hour: 17, text: "our little secret, you know i care about you"}
+  - {idx: 25, conversation_idx: 14, day_offset: 20, hour: 14, text: "can you send me a picture, keep it between us"}
+  - {idx: 26, conversation_idx: 12, day_offset: 20, hour: 15, text: "what's your phone number so we can text"}
+  - {idx: 27, conversation_idx: 13, day_offset: 20, hour: 16, text: "only i really understand you, no one else"}
+  - {idx: 28, conversation_idx: 14, day_offset: 21, hour: 14, text: "send me a gift card and i'll show you something cool"}
+  - {idx: 29, conversation_idx: 1, day_offset: 21, hour: 15, text: "don't mention this to anyone at school either"}
+  - {idx: 30, conversation_idx: 2, day_offset: 21, hour: 16, text: "let's continue on signal where it's more private, keep it secret"}

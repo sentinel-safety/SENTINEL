@@ -1,0 +1,21 @@
+cases:
+  - id: emoji_normalising
+    messages:
+      - "lol 😜 everyone ur age watches that stuff its totally 🆗 normal"
+    minor_recipient: true
+    expect_match: true
+
+  - id: indirect_framing
+    messages:
+      - "so like my friend was asking if u ever look at like... adult things online"
+      - "its fine if u do, everyone does"
+    minor_recipient: true
+    expect_match: true
+
+  - id: split_across_messages
+    messages:
+      - "have u ever seen"
+      - "anything like adult content"
+      - "its super normal at ur age"
+    minor_recipient: true
+    expect_match: true

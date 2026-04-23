@@ -1,0 +1,18 @@
+cases:
+  - id: mature_for_age
+    messages:
+      - "You're so mature for your age, honestly you're not like other kids at all"
+    minor_recipient: true
+    expect_match: true
+
+  - id: no_one_understands
+    messages:
+      - "No one understands you the way I do. Your friends could never get you like this."
+    minor_recipient: true
+    expect_match: true
+
+  - id: separation_from_peers
+    messages:
+      - "Those kids at school are immature, you're different from them. We have something they wouldn't get."
+    minor_recipient: true
+    expect_match: true

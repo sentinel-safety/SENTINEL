@@ -1,0 +1,9 @@
+cases:
+  - id: cooperative_game_mention
+    messages: ["we can trade v-bucks in the game"]
+    minor_recipient: true
+    expect_match: true
+  - id: adult_recipient
+    messages: ["i'll venmo you the tickets"]
+    minor_recipient: false
+    expect_match: false

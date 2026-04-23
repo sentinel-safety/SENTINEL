@@ -1,0 +1,271 @@
+name: sentinel
+
+x-service-env: &service-env
+  SENTINEL_ENV: ${SENTINEL_ENV:-dev}
+  SENTINEL_LOG_LEVEL: ${SENTINEL_LOG_LEVEL:-INFO}
+  SENTINEL_POSTGRES_DSN: postgresql+asyncpg://sentinel_app:sentinel_app_dev@postgres:5432/sentinel
+  SENTINEL_POSTGRES_SYNC_DSN: postgresql+psycopg://sentinel:sentinel_dev@postgres:5432/sentinel
+  SENTINEL_REDIS_DSN: redis://redis:6379/0
+  SENTINEL_QDRANT_URL: http://qdrant:6333
+  SENTINEL_OTLP_ENDPOINT: http://jaeger:4317
+
+x-service-deps: &service-deps
+  postgres:
+    condition: service_healthy
+  redis:
+    condition: service_healthy
+
+services:
+  postgres:
+    build:
+      context: ./infra/docker/postgres
+    container_name: sentinel-postgres
+    environment:
+      POSTGRES_USER: sentinel
+      POSTGRES_PASSWORD: sentinel_dev
+      POSTGRES_DB: sentinel
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sentinel -d sentinel"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+  redis:
+    image: redis:7.4-alpine
+    container_name: sentinel-redis
+    command: ["redis-server", "--appendonly", "yes", "--save", "60", "1000"]
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+  qdrant:
+    image: qdrant/qdrant:v1.12.4
+    container_name: sentinel-qdrant
+    ports:
+      - "127.0.0.1:6333:6333"
+      - "127.0.0.1:6334:6334"
+    volumes:
+      - qdrant-data:/qdrant/storage
+    environment:
+      QDRANT__LOG_LEVEL: INFO
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c ':> /dev/tcp/127.0.0.1/6333' || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+  jaeger:
+    image: jaegertracing/all-in-one:1.57
+    container_name: sentinel-jaeger
+    environment:
+      COLLECTOR_OTLP_ENABLED: "true"
+    ports:
+      - "127.0.0.1:16686:16686"
+      - "127.0.0.1:4317:4317"
+      - "127.0.0.1:4318:4318"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:14269/ || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+  gateway:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile.service
+      args:
+        SERVICE_MODULE: services.gateway.app
+        SERVICE_PORT: "8000"
+    container_name: sentinel-gateway
+    environment: *service-env
+    depends_on: *service-deps
+    ports:
+      - "127.0.0.1:8000:8000"
+    restart: unless-stopped
+
+  ingestion:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile.service
+      args:
+        SERVICE_MODULE: services.ingestion.app
+        SERVICE_PORT: "8001"
+    container_name: sentinel-ingestion
+    environment: *service-env
+    depends_on: *service-deps
+    ports:
+      - "127.0.0.1:8001:8001"
+    restart: unless-stopped
+
+  preprocessing:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile.service
+      args:
+        SERVICE_MODULE: services.preprocessing.app
+        SERVICE_PORT: "8002"
+    container_name: sentinel-preprocessing
+    environment: *service-env
+    depends_on: *service-deps
+    ports:
+      - "127.0.0.1:8002:8002"
+    restart: unless-stopped
+
+  classifier-first-pass:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile.service
+      args:
+        SERVICE_MODULE: services.classifier_first_pass.app
+        SERVICE_PORT: "8003"
+    container_name: sentinel-classifier-first-pass
+    environment: *service-env
+    depends_on: *service-deps
+    ports:
+      - "127.0.0.1:8003:8003"
+    restart: unless-stopped
+
+  scoring:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile.service
+      args:
+        SERVICE_MODULE: services.scoring.app
+        SERVICE_PORT: "8004"
+    container_name: sentinel-scoring
+    environment: *service-env
+    depends_on: *service-deps
+    ports:
+      - "127.0.0.1:8004:8004"
+    restart: unless-stopped
+
+  memory:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile.service
+      args:
+        SERVICE_MODULE: services.memory.app
+        SERVICE_PORT: "8005"
+    container_name: sentinel-memory
+    environment: *service-env
+    depends_on: *service-deps
+    ports:
+      - "127.0.0.1:8005:8005"
+    restart: unless-stopped
+
+  graph:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile.service
+      args:
+        SERVICE_MODULE: services.graph.app
+        SERVICE_PORT: "8006"
+    container_name: sentinel-graph
+    environment: *service-env
+    depends_on: *service-deps
+    ports:
+      - "127.0.0.1:8006:8006"
+    restart: unless-stopped
+
+  patterns:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile.service
+      args:
+        SERVICE_MODULE: services.patterns.app
+        SERVICE_PORT: "8007"
+    container_name: sentinel-patterns
+    environment: *service-env
+    depends_on: *service-deps
+    ports:
+      - "127.0.0.1:8007:8007"
+    restart: unless-stopped
+
+  response:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile.service
+      args:
+        SERVICE_MODULE: services.response.app
+        SERVICE_PORT: "8008"
+    container_name: sentinel-response
+    environment: *service-env
+    depends_on: *service-deps
+    ports:
+      - "127.0.0.1:8008:8008"
+    restart: unless-stopped
+
+  explainability:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile.service
+      args:
+        SERVICE_MODULE: services.explainability.app
+        SERVICE_PORT: "8009"
+    container_name: sentinel-explainability
+    environment: *service-env
+    depends_on: *service-deps
+    ports:
+      - "127.0.0.1:8009:8009"
+    restart: unless-stopped
+
+  honeypot:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile.service
+      args:
+        SERVICE_MODULE: services.honeypot.app
+        SERVICE_PORT: "8010"
+    container_name: sentinel-honeypot
+    environment: *service-env
+    depends_on: *service-deps
+    ports:
+      - "127.0.0.1:8010:8010"
+    restart: unless-stopped
+
+  federation:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile.service
+      args:
+        SERVICE_MODULE: services.federation.app
+        SERVICE_PORT: "8011"
+    container_name: sentinel-federation
+    environment: *service-env
+    depends_on: *service-deps
+    ports:
+      - "127.0.0.1:8011:8011"
+    restart: unless-stopped
+
+  synthetic-data:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile.service
+      args:
+        SERVICE_MODULE: services.synthetic_data.app
+        SERVICE_PORT: "8012"
+    container_name: sentinel-synthetic-data
+    environment: *service-env
+    depends_on: *service-deps
+    ports:
+      - "127.0.0.1:8012:8012"
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+  redis-data:
+  qdrant-data:

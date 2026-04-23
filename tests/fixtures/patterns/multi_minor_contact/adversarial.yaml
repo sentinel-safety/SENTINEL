@@ -1,0 +1,6 @@
+cases:
+  - id: community_moderator_pattern
+    messages: ["welcome to the server"]
+    minor_recipient: true
+    expect_match: false
+    recent_distinct_minor_target_count: 0

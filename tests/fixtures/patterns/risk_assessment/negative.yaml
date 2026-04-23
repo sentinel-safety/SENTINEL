@@ -1,0 +1,18 @@
+cases:
+  - id: normal_greeting
+    messages:
+      - "How was school today? Did you have fun?"
+    minor_recipient: true
+    expect_match: false
+
+  - id: adult_recipient
+    messages:
+      - "Are you home alone? I wanted to call."
+    minor_recipient: false
+    expect_match: false
+
+  - id: teacher_pickup
+    messages:
+      - "Just confirming, will your dad be picking you up after practice at 5pm?"
+    minor_recipient: true
+    expect_match: false

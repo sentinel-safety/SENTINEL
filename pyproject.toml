@@ -1,0 +1,172 @@
+[project]
+name = "sentinel"
+version = "0.0.1"
+description = "Behavioral intelligence platform for protecting minors on online platforms."
+requires-python = ">=3.12"
+readme = "README.md"
+license = { text = "Proprietary" }
+
+dependencies = [
+    "pydantic>=2.9",
+    "pydantic-settings>=2.6",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.32",
+    "httpx>=0.27",
+    "structlog>=24.4",
+    "opentelemetry-api>=1.28",
+    "opentelemetry-sdk>=1.28",
+    "opentelemetry-instrumentation-fastapi>=0.49b0",
+    "opentelemetry-instrumentation-httpx>=0.49b0",
+    "opentelemetry-instrumentation-asyncpg>=0.49b0",
+    "opentelemetry-instrumentation-redis>=0.49b0",
+    "opentelemetry-exporter-otlp>=1.28",
+    "sqlalchemy[asyncio]>=2.0.36",
+    "asyncpg>=0.30",
+    "psycopg[binary]>=3.2",
+    "alembic>=1.14",
+    "redis>=5.2",
+    "qdrant-client>=1.12",
+    "anthropic>=0.40",
+    "openai>=1.54",
+    "tenacity>=9.0",
+    "orjson>=3.10",
+    "python-multipart>=0.0.12",
+    "cryptography>=43.0",
+    "pyyaml>=6.0.3",
+    "jsonschema>=4.26.0",
+    "jinja2>=3.1",
+    "pyjwt>=2.9",
+    "argon2-cffi>=23.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "pytest-asyncio>=0.24",
+    "pytest-cov>=6.0",
+    "pytest-mock>=3.14",
+    "pytest-httpx>=0.35",
+    "ruff>=0.8",
+    "mypy>=1.13",
+    "pre-commit>=4.0",
+    "detect-secrets>=1.5",
+    "pip-audit>=2.7",
+    "testcontainers[postgres,redis]>=4.9",
+    "types-redis>=4.6",
+    "freezegun>=1.5",
+    "hypothesis>=6.119",
+    "respx>=0.21",
+    "types-pyyaml>=6.0.12.20260408",
+    "types-jsonschema>=4.26.0.20260408",
+    "fakeredis>=2.35.1",
+]
+
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["shared", "services", "compliance"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["shared", "services", "compliance", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+    "I",    # isort
+    "N",    # pep8-naming
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "C4",   # flake8-comprehensions
+    "DTZ",  # flake8-datetimez
+    "PT",   # flake8-pytest-style
+    "SIM",  # flake8-simplify
+    "RUF",  # ruff-specific
+    "S",    # flake8-bandit (security)
+    "ASYNC",
+    "TID",  # tidy imports
+]
+ignore = [
+    "E501",   # line length handled by formatter
+    "S101",   # allow `assert` in tests
+    "B008",   # FastAPI uses function calls in defaults (Depends, Body, etc.)
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S", "PT011"]
+"migrations/**/*.py" = ["E", "N", "UP"]
+"scripts/**/*.py" = ["S"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["shared", "services", "compliance"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["pydantic.mypy"]
+exclude = ["migrations/", "build/", "dist/", "sdk/"]
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+
+[[tool.mypy.overrides]]
+module = [
+    "qdrant_client.*",
+    "testcontainers.*",
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+pythonpath = ["."]
+asyncio_mode = "auto"
+addopts = [
+    "-ra",
+    "--strict-markers",
+    "--strict-config",
+    "-m",
+    "not load",
+    "--cov=shared",
+    "--cov=services",
+    "--cov=compliance",
+    "--cov-report=term-missing:skip-covered",
+    "--cov-report=xml",
+    "--cov-fail-under=0",
+]
+markers = [
+    "unit: unit tests (fast, no external deps)",
+    "integration: integration tests (require postgres/redis/qdrant)",
+    "smoke: end-to-end smoke tests (in-process, exercise every service)",
+    "adversarial: red-team evasion tests",
+    "load: load tests",
+    "bias: bias audit tests",
+    "honeypot: red-team calibration (opt in)",
+    "security: automated pen-test suite (require test/dev env)",
+    "no_ingestion_auth_bypass: opt out of the default ingestion-auth test bypass",
+]
+filterwarnings = [
+    "error",
+    "ignore::DeprecationWarning:pydantic.*",
+    "ignore::ResourceWarning",
+    "ignore::pytest.PytestUnraisableExceptionWarning",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["shared", "services", "compliance"]
+omit = ["*/tests/*", "migrations/*", "*/__main__.py"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]

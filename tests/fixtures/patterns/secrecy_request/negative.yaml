@@ -1,0 +1,9 @@
+cases:
+  - id: homework_help
+    messages: ["don't forget to tell your teacher about the project"]
+    minor_recipient: true
+    expect_match: false
+  - id: game_tip
+    messages: ["this is a secret boss fight in the game"]
+    minor_recipient: true
+    expect_match: false

@@ -1,0 +1,282 @@
+SENTINEL License Agreement
+
+Copyright 2026 Sentinel Foundation
+
+This license grants you rights to use, copy, and modify SENTINEL under the terms
+below. For commercial licensing inquiries, contact: sentinel.childsafety@gmail.com
+
+---
+
+WHAT YOU CAN DO
+
+You are free to:
+- Download, install, and use SENTINEL on your own systems
+- Run SENTINEL in production on platforms generating under $100,000 USD annual
+  revenue
+- Read, study, and modify the source code
+- Use SENTINEL for non-commercial purposes without any restrictions
+- Deploy SENTINEL internally within your organization
+
+---
+
+WHAT YOU CANNOT DO WITHOUT PERMISSION
+
+You may NOT:
+- Offer SENTINEL as a hosted service, SaaS product, or managed service to third
+  parties (whether free or paid) unless you have a written commercial license
+  agreement with Sentinel Foundation
+- Sublicense, resell, or transfer your rights under this license to anyone else
+- Redistribute modified versions under different terms or licenses
+- Remove or alter copyright notices and attribution in the code
+- Use commercial derivatives of SENTINEL above the $100,000 revenue threshold
+  without a separate commercial license
+- Create shell entities or affiliated companies to circumvent the revenue
+  threshold
+- Use SENTINEL to build competing child-safety moderation platforms for
+  commercial sale above the revenue threshold
+
+---
+
+REVENUE THRESHOLD TERMS
+
+"Annual revenue" means all gross revenue received by your organization in the
+past 12 months, calculated on a worldwide basis and including:
+- Your direct business revenue
+- Revenue from all subsidiaries (>50% owned)
+- Revenue from all parent companies
+- Revenue from all affiliated entities under common control
+- Revenue from all entities you own or control >50%
+
+This means: A company with $10M total revenue cannot create a $99k subsidiary to
+avoid licensing fees. The threshold applies to the entire legal and economic
+structure.
+
+Example 1 (allowed): A non-profit with $50k annual revenue runs SENTINEL on their
+platform. Compliant.
+
+Example 2 (requires license): A company with $150k annual revenue deploys
+SENTINEL. Must purchase commercial license.
+
+Example 3 (not allowed): A company with $50M revenue creates a shell subsidiary
+with $99k revenue to use SENTINEL. This is circumvention and constitutes license
+violation.
+
+---
+
+HOSTED SERVICE RESTRICTION
+
+You cannot run SENTINEL as a service for others without written permission. This
+includes:
+- SaaS offerings (Software as a Service)
+- Managed hosting services
+- API services that others use
+- White-labeled implementations where customers do not control their own
+  deployment
+
+Exception: You MAY offer SENTINEL as an internal-only service to other
+departments or entities within your organization, or to partners on a
+non-commercial basis, if all parties are under your direct control.
+
+---
+
+ATTRIBUTION REQUIREMENT
+
+If you use SENTINEL in production, you must:
+- Retain all copyright notices in source code (do not remove or alter them)
+- Display visible attribution to "SENTINEL by Sentinel Foundation" in any
+  documentation, dashboard, About page, or public-facing materials that describe
+  your safety systems
+- Provide this attribution to end users or customers if they ask about your
+  moderation technology
+
+Attribution does not require linking to our website, but must be visible and
+accurate.
+
+---
+
+ANTI-CIRCUMVENTION
+
+Do not attempt to:
+- Rename, rebrand, or fork SENTINEL to avoid these terms
+- Create modified versions and claim they are new products with new rights
+- Use SENTINEL as a component in a larger platform designed to circumvent the
+  revenue threshold
+- Transfer operations to a different legal entity to reset the revenue clock
+- Use shell companies, trusts, or complex ownership structures to hide actual
+  revenue
+
+If you believe our interpretation of your situation is incorrect, contact us
+before deployment. If you violate this clause knowingly, you forfeit all rights
+under this license and must cease using SENTINEL immediately.
+
+---
+
+AUDIT AND VERIFICATION
+
+Sentinel Foundation reserves the right to:
+- Request reasonable written confirmation of your annual revenue if you claim
+  status below the $100,000 threshold
+- Ask for documentation showing your revenue calculation and entity structure
+- Conduct reasonable compliance reviews to verify you are using SENTINEL
+  according to these terms
+
+If you fail to provide requested information within 30 days of a reasonable
+written request, or if you provide false information, you are in material breach
+of this license.
+
+---
+
+COMMERCIAL LICENSING
+
+If your annual revenue exceeds $100,000 USD, or you wish to:
+- Operate SENTINEL as a hosted/SaaS service
+- Resell or sublicense SENTINEL
+- Build commercial derivatives
+
+...you must contact Sentinel Foundation and negotiate a commercial license
+agreement. Commercial licensing is available; contact:
+sentinel.childsafety@gmail.com
+
+---
+
+CONVERSION TO APACHE 2.0
+
+On April 23, 2046 (twenty years from the date of this license), the Licensed
+Work will automatically convert to the Apache License 2.0. At that point:
+- All restrictions on hosted services, commercial use, and revenue thresholds
+  terminate
+- You may freely use SENTINEL for any purpose, including commercial services,
+  without restriction
+- The terms of Apache 2.0 will govern instead of this license
+
+Until that date, all terms below remain in effect.
+
+---
+
+DISCLAIMER OF WARRANTY
+
+SENTINEL IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE, SAFETY, ACCURACY, OR FREEDOM FROM INFRINGEMENT.
+
+SENTINEL IS A RESEARCH PROTOTYPE. It is not a substitute for human judgment,
+legal review, or professional T&S expertise. You are responsible for:
+- Reviewing SENTINEL's decisions and reasoning
+- Maintaining human oversight of moderation actions
+- Complying with all applicable laws (COPPA, GDPR, CIPA, etc.)
+- Protecting user privacy and data
+- Implementing appropriate access controls and audit logging
+
+Sentinel Foundation is not liable for errors, false positives, false negatives,
+or harm resulting from use or misuse of SENTINEL.
+
+---
+
+LIMITATION OF LIABILITY
+
+SENTINEL FOUNDATION SHALL NOT BE LIABLE FOR:
+- Any indirect, incidental, consequential, special, or punitive damages
+- Loss of profits, revenue, data, or business opportunity
+- Harm to end users or investigation subjects
+- Regulatory fines or legal liability resulting from your use
+- Errors, false positives, or false negatives in SENTINEL's analysis
+- Any claim arising from your failure to maintain human oversight
+
+This limitation applies regardless of the legal theory (contract, tort, strict
+liability, or otherwise) and even if Sentinel Foundation has been advised of the
+possibility of such damages.
+
+---
+
+INJUNCTIVE RELIEF
+
+The parties acknowledge that breach of this license (particularly the revenue
+threshold, hosted service restriction, and anti-circumvention terms) would cause
+irreparable harm that cannot be remedied by money damages alone. Accordingly:
+
+- Sentinel Foundation is entitled to seek injunctive relief (court orders to stop
+  violations) without posting a bond
+- This right exists in addition to all other remedies available at law or in
+  equity
+- You consent to jurisdiction in German courts for purposes of enforcing this
+  remedy
+
+---
+
+GOVERNING LAW AND JURISDICTION
+
+This license is governed by the laws of the Federal Republic of Germany, without
+regard to conflicts of law principles.
+
+Any dispute arising from this license shall be resolved exclusively in the courts
+of Stuttgart, Germany. Both parties consent to the jurisdiction and venue of
+these courts and waive any objection based on inconvenient forum.
+
+---
+
+TERMINATION
+
+This license is effective until terminated. Your rights under this license will
+be terminated immediately if you:
+- Violate the revenue threshold or hosted service restriction
+- Attempt circumvention or anti-circumvention violations
+- Remove or alter copyright notices
+- Refuse to provide audit information when reasonably requested
+- Fail to attribute SENTINEL when required
+
+Upon termination, you must:
+- Cease all use of SENTINEL
+- Delete all copies in your possession or control
+- Cease offering any service based on SENTINEL to third parties
+
+The restrictions on hosted services, commercial derivatives, sublicensing, and
+anti-circumvention survive termination and remain binding perpetually.
+
+---
+
+NO SUBLICENSING OR RESALE
+
+You may not sublicense, resell, transfer, assign, or convey any rights under
+this license to any third party. Any attempt to do so is void and constitutes a
+material breach of this license.
+
+This means: If you use SENTINEL and develop derivative works, you may deploy
+those derivatives internally, but you cannot give or sell those rights to
+someone else (even with modifications) without a separate written commercial
+agreement with Sentinel Foundation.
+
+---
+
+NO DERIVATIVE COMMERCIAL PRODUCTS
+
+If you modify SENTINEL and your organization's annual revenue exceeds
+$100,000 USD, you may not commercialize or offer the modified version to third
+parties (whether as a service, product, or component in a product) without a
+separate commercial license from Sentinel Foundation.
+
+Forking the code and rebranding it does not grant new commercial rights. You
+still must comply with the revenue threshold and hosted service restrictions.
+
+---
+
+ENTIRE AGREEMENT
+
+This license is the complete agreement between you and Sentinel Foundation
+regarding SENTINEL. It supersedes all prior agreements, understandings, and
+negotiations. No modification or waiver is valid unless in writing and signed by
+a representative of Sentinel Foundation.
+
+---
+
+SEVERABILITY
+
+If any provision of this license is found unenforceable by a court of law, that
+provision will be modified to the minimum extent necessary to make it
+enforceable, and all other provisions remain in full effect.
+
+---
+
+CONTACT
+
+For questions, commercial licensing, or to report compliance concerns:
+sentinel.childsafety@gmail.com

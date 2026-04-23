@@ -1,0 +1,18 @@
+cases:
+  - id: sexual_joke
+    messages:
+      - "lol okay here's a dirty joke, don't tell me you've never heard one before"
+    minor_recipient: true
+    expect_match: true
+
+  - id: explicit_reference
+    messages:
+      - "Have you ever seen adult stuff online? Like it's totally normal at your age to be curious"
+    minor_recipient: true
+    expect_match: true
+
+  - id: normalising_content
+    messages:
+      - "Everyone your age watches that stuff, it's no big deal. I'll send you a link."
+    minor_recipient: true
+    expect_match: true

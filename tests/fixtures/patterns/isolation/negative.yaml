@@ -1,0 +1,18 @@
+cases:
+  - id: password_safety
+    messages:
+      - "Never share your password with anyone, even your friends."
+    minor_recipient: true
+    expect_match: false
+
+  - id: adult_recipient
+    messages:
+      - "Keep this between us, I don't want the whole office to know yet"
+    minor_recipient: false
+    expect_match: false
+
+  - id: normal_chat
+    messages:
+      - "How was your weekend? Did you do anything fun?"
+    minor_recipient: true
+    expect_match: false

@@ -1,0 +1,11 @@
+cases:
+  - id: only_unflagged_neighbors
+    messages: ["hey friend"]
+    minor_recipient: true
+    expect_match: false
+    recent_distinct_minor_target_count: 0
+  - id: neighbor_below_similarity_threshold
+    messages: ["hey friend"]
+    minor_recipient: true
+    expect_match: false
+    recent_distinct_minor_target_count: 0

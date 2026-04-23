@@ -1,0 +1,11 @@
+cases:
+  - id: only_one_minor_contact
+    messages: ["hey"]
+    minor_recipient: true
+    expect_match: false
+    recent_distinct_minor_target_count: 0
+  - id: many_adult_contacts
+    messages: ["hi"]
+    minor_recipient: false
+    expect_match: false
+    recent_distinct_minor_target_count: 0

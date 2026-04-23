@@ -1,0 +1,11 @@
+# SYNTHETIC PERSONA — NOT A REAL CHILD. DO NOT REUSE AS A HUMAN PROFILE.
+id: liam-12-us-west
+age: 12
+gender: male
+location: us-west
+interests: [skateboarding, minecraft, football, drawing]
+vocabulary_level: age_typical
+regional_speech: us_west_urban
+consent_statement: "SYNTHETIC — not a real child"
+activation_scope: [US]
+prompt_version: v1

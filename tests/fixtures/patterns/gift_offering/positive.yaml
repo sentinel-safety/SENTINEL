@@ -1,0 +1,17 @@
+cases:
+  - id: vbucks
+    messages: ["i can send you some v-bucks"]
+    minor_recipient: true
+    expect_match: true
+  - id: gift_card
+    messages: ["want an amazon gift card?"]
+    minor_recipient: true
+    expect_match: true
+  - id: venmo
+    messages: ["i'll venmo you 20 bucks if you send me a pic"]
+    minor_recipient: true
+    expect_match: true
+  - id: robux
+    messages: ["free robux promise, i'll send you"]
+    minor_recipient: true
+    expect_match: true

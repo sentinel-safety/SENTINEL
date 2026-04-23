@@ -1,0 +1,18 @@
+cases:
+  - id: achievement_compliment
+    messages:
+      - "Great job on the game today, you played really well!"
+    minor_recipient: true
+    expect_match: false
+
+  - id: adult_recipient
+    messages:
+      - "No one understands me the way you do, you're so insightful"
+    minor_recipient: false
+    expect_match: false
+
+  - id: normal_conversation
+    messages:
+      - "How are things at school? Making new friends?"
+    minor_recipient: true
+    expect_match: false

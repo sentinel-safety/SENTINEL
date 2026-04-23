@@ -1,0 +1,188 @@
+friendship_forming:
+  special_connection:
+    confidence: 0.85
+    evidence_excerpts:
+      - "special connection, you understand me better than anyone"
+  mature_for_age:
+    confidence: 0.82
+    evidence_excerpts:
+      - "You're so mature for your age"
+      - "I've never met someone your age I could talk to like this"
+  exclusive_secret:
+    confidence: 0.78
+    evidence_excerpts:
+      - "Let's keep this between us"
+      - "they'd understand what we have"
+  emoji_spread:
+    confidence: 0.76
+    evidence_excerpts:
+      - "u r so mature 4 ur age"
+      - "no1 gets u like i do"
+  language_switch_spanish:
+    confidence: 0.80
+    evidence_excerpts:
+      - "eres tan especial para mí"
+  split_across_messages:
+    confidence: 0.74
+    evidence_excerpts:
+      - "special connection"
+
+risk_assessment:
+  parents_home:
+    confidence: 0.90
+    evidence_excerpts:
+      - "Are your parents home right now"
+      - "are you alone"
+  device_monitoring:
+    confidence: 0.88
+    evidence_excerpts:
+      - "Does your mum check your phone"
+      - "go through your messages"
+  alone_time:
+    confidence: 0.87
+    evidence_excerpts:
+      - "What time do your parents usually go to bed"
+      - "time by yourself at night"
+  emoji_obfuscated:
+    confidence: 0.75
+    evidence_excerpts:
+      - "home rn"
+      - "r u alone"
+  split_question:
+    confidence: 0.72
+    evidence_excerpts:
+      - "check ur phone"
+  indirect_probe:
+    confidence: 0.71
+    evidence_excerpts:
+      - "privacy at home"
+      - "talk freely"
+
+isolation:
+  keep_secret:
+    confidence: 0.84
+    evidence_excerpts:
+      - "keep what we talk about between us"
+      - "parents wouldn't understand"
+  dont_tell:
+    confidence: 0.88
+    evidence_excerpts:
+      - "don't tell anyone about our conversations"
+  secrecy_guilt:
+    confidence: 0.86
+    evidence_excerpts:
+      - "If you really trusted me you wouldn't tell your mum"
+  emoji_laden:
+    confidence: 0.77
+    evidence_excerpts:
+      - "ur friends r so immature"
+      - "ur just different"
+  language_switch_french:
+    confidence: 0.79
+    evidence_excerpts:
+      - "plus mature que tes amis"
+  gradual_separation:
+    confidence: 0.73
+    evidence_excerpts:
+      - "i'm the only one who really understands u"
+
+desensitization:
+  sexual_joke:
+    confidence: 0.82
+    evidence_excerpts:
+      - "dirty joke"
+  explicit_reference:
+    confidence: 0.91
+    evidence_excerpts:
+      - "adult stuff online"
+      - "totally normal at your age"
+  normalising_content:
+    confidence: 0.89
+    evidence_excerpts:
+      - "Everyone your age watches that stuff"
+  emoji_normalising:
+    confidence: 0.76
+    evidence_excerpts:
+      - "everyone ur age watches that stuff"
+  indirect_framing:
+    confidence: 0.74
+    evidence_excerpts:
+      - "adult things online"
+      - "everyone does"
+  split_across_messages:
+    confidence: 0.72
+    evidence_excerpts:
+      - "adult content"
+      - "normal at ur age"
+
+sexual_escalation:
+  explicit_proposition:
+    confidence: 0.95
+    evidence_excerpts:
+      - "think about you in a sexual way"
+      - "attractive for your age"
+    photo_request: false
+    video_request: false
+  photo_request:
+    confidence: 0.93
+    evidence_excerpts:
+      - "send me a pic of yourself"
+      - "Just for me"
+    photo_request: true
+    video_request: false
+  sexual_role_play:
+    confidence: 0.94
+    evidence_excerpts:
+      - "pretend to be my girlfriend"
+      - "tell you what I want to do"
+    photo_request: false
+    video_request: false
+  coded_language:
+    confidence: 0.78
+    evidence_excerpts:
+      - "something grown up"
+      - "just between us"
+    photo_request: false
+    video_request: false
+  emoji_request:
+    confidence: 0.80
+    evidence_excerpts:
+      - "just 4 me"
+      - "for my eyes only"
+    photo_request: true
+    video_request: false
+  split_proposition:
+    confidence: 0.77
+    evidence_excerpts:
+      - "think about u"
+      - "ur so attractive"
+    photo_request: false
+    video_request: false
+
+exclusivity_llm:
+  mature_for_age:
+    confidence: 0.81
+    evidence_excerpts:
+      - "You're so mature for your age"
+      - "not like other kids at all"
+  no_one_understands:
+    confidence: 0.83
+    evidence_excerpts:
+      - "No one understands you the way I do"
+  separation_from_peers:
+    confidence: 0.80
+    evidence_excerpts:
+      - "kids at school are immature"
+      - "you're different from them"
+  emoji_separation:
+    confidence: 0.76
+    evidence_excerpts:
+      - "more mature u know"
+  coded_exclusivity:
+    confidence: 0.78
+    evidence_excerpts:
+      - "something special that other ppl just wouldn't get"
+  gradual_exclusion:
+    confidence: 0.74
+    evidence_excerpts:
+      - "only i really get who u are"

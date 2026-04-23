@@ -1,0 +1,48 @@
+name: duplicate_account_predator
+description: >
+  A flagged predator opens a fresh account with the same behavioral fingerprint.
+  SENTINEL must re-flag the new account via fingerprint similarity within 5 messages.
+
+training_messages:
+  - day_offset: 0
+    hour: 23
+    text: "youre so pretty, dont tell your parents"
+    minor: true
+  - day_offset: 1
+    hour: 23
+    text: "can you send me a pic?"
+    minor: true
+  - day_offset: 2
+    hour: 23
+    text: "lets move to telegram"
+    minor: true
+  - day_offset: 3
+    hour: 23
+    text: "youre so mature for your age"
+    minor: true
+  - day_offset: 4
+    hour: 23
+    text: "our little secret ok"
+    minor: true
+
+duplicate_messages:
+  - day_offset: 10
+    hour: 23
+    text: "youre so pretty"
+    minor: true
+  - day_offset: 10
+    hour: 23
+    text: "send me a pic?"
+    minor: true
+  - day_offset: 10
+    hour: 23
+    text: "lets switch to snapchat"
+    minor: true
+  - day_offset: 10
+    hour: 23
+    text: "keep it between us"
+    minor: true
+  - day_offset: 10
+    hour: 23
+    text: "youre so mature"
+    minor: true

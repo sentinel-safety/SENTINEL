@@ -1,0 +1,9 @@
+cases:
+  - id: indirect
+    messages: ["where do you hang out after class?"]
+    minor_recipient: true
+    expect_match: false
+  - id: euphemism
+    messages: ["is the coast clear at home?"]
+    minor_recipient: true
+    expect_match: false

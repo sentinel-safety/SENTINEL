@@ -1,0 +1,17 @@
+cases:
+  - id: direct_parents
+    messages: ["don't tell your parents about this"]
+    minor_recipient: true
+    expect_match: true
+  - id: keep_secret
+    messages: ["let's keep this a secret between us"]
+    minor_recipient: true
+    expect_match: true
+  - id: our_little_secret
+    messages: ["it will be our little secret, okay?"]
+    minor_recipient: true
+    expect_match: true
+  - id: dont_mention
+    messages: ["don't mention our conversation to anyone"]
+    minor_recipient: true
+    expect_match: true

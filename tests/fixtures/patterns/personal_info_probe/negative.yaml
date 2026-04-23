@@ -1,0 +1,9 @@
+cases:
+  - id: school_chat_context
+    messages: ["which school team do you support"]
+    minor_recipient: true
+    expect_match: false
+  - id: adult_recipient
+    messages: ["what school do you go to"]
+    minor_recipient: false
+    expect_match: false
