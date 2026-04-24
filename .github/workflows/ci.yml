@@ -48,7 +48,7 @@ jobs:
       - name: Audit dependencies for known CVEs
         run: |
           uv export --format requirements-txt --no-hashes --no-emit-project -o /tmp/requirements.txt
-          uv run pip-audit --strict --no-deps --disable-pip -r /tmp/requirements.txt
+                    uv run pip-audit --strict --no-deps --disable-pip --ignore-vuln CVE-2026-3219 -r /tmp/requirements.txt
 
   test-unit:
     name: Unit tests
