@@ -1,6 +1,6 @@
 [project]
-name = "sentinel-python"
-version = "0.1.0"
+name = "sentinel-safety"
+version = "1.0.0"
 description = "Official Python SDK for SENTINEL behavioral intelligence API."
 readme = "README.md"
 requires-python = ">=3.11"
