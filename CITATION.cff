@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use SENTINEL in your research, please cite it as follows."
+type: software
+title: "SENTINEL: Behavioral Intelligence Platform for Child Safety Detection"
+abstract: "SENTINEL is an open-source behavioral intelligence platform that detects child grooming on digital platforms through multi-signal behavioral pattern analysis. The system tracks linguistic, graph-based, temporal, and fairness signals across sessions to identify grooming processes before harmful content appears, rather than scanning for flagged keywords. It includes compliance infrastructure for the EU Digital Services Act, UK Online Safety Act, COPPA, and NCMEC CyberTipline mandatory reporting."
+authors:
+  - name: "Sentinel Foundation"
+    email: "sentinel.childsafety@gmail.com"
+repository-code: "https://github.com/sentinel-safety/SENTINEL"
+url: "https://github.com/sentinel-safety/SENTINEL"
+license: "LicenseRef-SENTINEL-v1"
+version: "1.0.0"
+date-released: "2026-04-24"
+keywords:
+  - child safety
+  - grooming detection
+  - behavioral analysis
+  - online safety
+  - content moderation
+  - compliance
+  - EU DSA
+  - UK Online Safety Act
+  - COPPA
+  - machine learning
+  - natural language processing
+  - trust and safety
