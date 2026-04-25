@@ -94,7 +94,7 @@ Each user receives a **risk score (0–100)** with a tier label (`trusted` / `wa
 - **Privacy-preserving federation** — platforms share threat signatures without sharing raw messages or user identities. A predator banned on one federated platform is flagged on others within minutes.
 - **Fairness gates** — demographic parity audits run before any model deploys. Deployment is blocked if the model disproportionately flags any group.
 - **NCMEC CyberTipline packages** — automatically generated when behavioral indicators meet mandatory reporting thresholds. You file; SENTINEL prepares the structured documentation.
-- **13 independent microservices** — deploy incrementally, start with what you need.
+- **13 independent microservices** — deploy incrementally, start with wha you need.
 - **Honeypot module** (opt-in) — deploy decoy personas to actively surface and document predatory behavior for legal handoff.
 
 ---
@@ -176,6 +176,18 @@ Commercial licensing: [sentinel.childsafety@gmail.com](mailto:sentinel.childsafe
 ## Relationship to Roblox/Sentinel
 
 [Roblox's Sentinel](https://github.com/Roblox/Sentinel) is a Python detection *library* for contrastive learning-based rare text detection, running on Roblox's own platform. It is excellent at what it does. This project is different: SENTINEL is a compliance *platform* for other platforms to deploy — providing the audit infrastructure, regulatory compliance, federation, and moderator tooling that production deployments require. The two are complementary: Roblox's detection approach could be integrated as a component of SENTINEL's linguistic signal layer.
+
+---
+
+## Read More
+
+In-depth technical articles on DEV Community:
+
+- [Why Keyword Filters Fail for Child Safety — and What Behavioral Detection Actually Looks Like](https://dev.to/sentinelsafety/why-keyword-filters-fail-for-child-safety-and-what-behavioral-detection-actually-looks-like-3phi)
+- [Building Compliance-Native Child Safety: What DSA and UKOSA Actually Require](https://dev.to/sentinelsafety/building-compliance-native-child-safety-what-dsa-and-ukosa-actually-require-11ac)
+- [Privacy-Preserving Threat Federation: How Platforms Can Share Intelligence Without Sharing Data](https://dev.to/sentinelsafety/privacy-preserving-threat-federation-how-platforms-can-share-intelligence-without-sharing-data-37g4)
+- [Fairness in Child Safety AI: Why Demographic Parity Audits Are Not Optional](https://dev.to/sentinelsafety/fairness-in-child-safety-ai-why-demographic-parity-audits-are-not-optional-3iem)
+- [Inside SENTINEL: How 13 Microservices Detect Child Grooming by Behavior, Not Keywords](https://dev.to/sentinelsafety/inside-sentinel-how-13-microservices-detect-child-grooming-by-behavior-not-keywords-42p5)
 
 ---
 
