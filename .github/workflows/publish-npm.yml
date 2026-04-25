@@ -1,0 +1,48 @@
+name: Publish Node.js SDK to npm
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (build only, do not publish)'
+        type: boolean
+        default: false
+
+jobs:
+  build-and-publish:
+    name: Build and publish @sentinel-safety/client
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        working-directory: sdk/node
+        run: npm ci
+
+      - name: Build
+        working-directory: sdk/node
+        run: npm run build
+
+      - name: Verify package contents
+        working-directory: sdk/node
+        run: |
+          npm pack --dry-run
+          echo "Package size:"
+          npm pack 2>/dev/null && ls -lh *.tgz && rm -f *.tgz
+
+      - name: Publish to npm
+        if: ${{ !inputs.dry_run }}
+        working-directory: sdk/node
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
