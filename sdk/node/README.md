@@ -1,22 +1,23 @@
-# @sentinel/client
+# @sentinel-safety/client
 
-Official Node.js / TypeScript SDK for the SENTINEL behavioral intelligence API.
+Official Node.js/TypeScript SDK for the SENTINEL behavioral intelligence API.
 
 ## Install
 
 ```bash
-npm install ./sentinel-client-0.1.0.tgz
+npm install @sentinel-safety/client
 ```
 
 ## Quickstart
 
 ```typescript
-import { SentinelClient } from "@sentinel/client";
+import { SentinelClient } from "@sentinel-safety/client";
 
 const client = new SentinelClient({
   apiKey: process.env.SENTINEL_API_KEY!,
   baseUrl: "https://api.sentinel.example.com"
 });
+
 const result = await client.events.message({
   tenantId: "00000000-0000-0000-0000-000000000001",
   conversationId: "00000000-0000-0000-0000-000000000002",
@@ -24,6 +25,7 @@ const result = await client.events.message({
   content: "hello",
   timestamp: new Date()
 });
+
 console.log(result.tier, result.currentScore);
 ```
 
