@@ -1,0 +1,95 @@
+name: Publish Docker Images
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+env:
+  IMAGE_NAME: sentinelsafety/sentinel
+
+jobs:
+  build-and-push:
+    name: Build and push Docker images
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - service: gateway
+            latest: true
+          - service: ingestion
+            latest: false
+          - service: scoring
+            latest: false
+          - service: federation
+            latest: false
+          - service: explainability
+            latest: false
+          - service: classifier_first_pass
+            latest: false
+          - service: graph
+            latest: false
+          - service: patterns
+            latest: false
+          - service: memory
+            latest: false
+          - service: preprocessing
+            latest: false
+          - service: response
+            latest: false
+          - service: honeypot
+            latest: false
+          - service: dashboard_bff
+            latest: false
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Extract version
+        id: version
+        run: |
+          if [[ "${{ github.event_name }}" == "release" ]]; then
+            echo "ver=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+          else
+            echo "ver=dev" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build and push gateway (also latest)
+        if: ${{ matrix.latest }}
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: infra/docker/Dockerfile.service
+          build-args: SERVICE_MODULE=services.gateway
+          push: true
+          tags: |
+            ${{ env.IMAGE_NAME }}:latest
+            ${{ env.IMAGE_NAME }}:gateway
+            ${{ env.IMAGE_NAME }}:gateway-${{ steps.version.outputs.ver }}
+          cache-from: type=gha,scope=gateway
+          cache-to: type=gha,mode=max,scope=gateway
+
+      - name: Build and push service
+        if: ${{ !matrix.latest }}
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: infra/docker/Dockerfile.service
+          build-args: SERVICE_MODULE=services.${{ matrix.service }}
+          push: true
+          tags: |
+            ${{ env.IMAGE_NAME }}:${{ matrix.service }}
+            ${{ env.IMAGE_NAME }}:${{ matrix.service }}-${{ steps.version.outputs.ver }}
+          cache-from: type=gha,scope=${{ matrix.service }}
+          cache-to: type=gha,mode=max,scope=${{ matrix.service }}
