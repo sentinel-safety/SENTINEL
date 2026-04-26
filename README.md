@@ -188,6 +188,12 @@ In-depth technical articles on DEV Community:
 - [Privacy-Preserving Threat Federation: How Platforms Can Share Intelligence Without Sharing Data](https://dev.to/sentinelsafety/privacy-preserving-threat-federation-how-platforms-can-share-intelligence-without-sharing-data-37g4)
 - [Fairness in Child Safety AI: Why Demographic Parity Audits Are Not Optional](https://dev.to/sentinelsafety/fairness-in-child-safety-ai-why-demographic-parity-audits-are-not-optional-3iem)
 - [Inside SENTINEL: How 13 Microservices Detect Child Grooming by Behavior, Not Keywords](https://dev.to/sentinelsafety/inside-sentinel-how-13-microservices-detect-child-grooming-by-behavior-not-keywords-42p5)
+- [Grooming Operates Over Time: How Behavioral Detection Tracks It](https://dev.to/sentinelsafety/grooming-operates-over-time-heres-how-behavioral-detection-tracks-it-fb1)
+- [What EU DSA and UK Online Safety Act Require from Your Platform's Child Safety Infrastructure](https://dev.to/sentinelsafety/what-eu-dsa-and-uk-online-safety-act-require-from-your-platforms-child-safety-infrastructure-3ih6)
+- [NCMEC Mandatory Reporting for Online Platforms: What Developers Need to Know](https://dev.to/sentinelsafety/ncmec-mandatory-reporting-for-online-platforms-what-developers-need-to-know-4k74)
+- [Add Child Safety to Your Platform in 30 Minutes: A SENTINEL Integration Guide](https://dev.to/sentinelsafety/add-child-safety-to-your-platform-in-30-minutes-a-sentinel-integration-guide-14po)
+- [COPPA Compliance for Platform Developers: What the Law Actually Requires and How to Build It](https://dev.to/sentinelsafety/coppa-compliance-for-platform-developers-what-the-law-actually-requires-and-how-to-build-it-391k)
+- [False Positives in Child Safety AI: Architecture Tradeoffs and Why They Matter](https://dev.to/sentinelsafety/false-positives-in-child-safety-ai-architecture-tradeoffs-and-why-they-matter-3jln)
 
 ---
 
